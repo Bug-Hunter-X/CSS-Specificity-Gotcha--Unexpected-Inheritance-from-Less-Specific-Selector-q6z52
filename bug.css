@@ -1,0 +1,13 @@
+The following CSS code results in unexpected behavior due to an uncommon specificity issue:
+
+```css
+div p {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+```
+
+In most cases, one would expect the paragraph (`p`) element to be colored red, because the second rule is more specific. However, if the `div` element is not directly styled, the browser might treat the first rule as having higher specificity than the second rule due to the combination of `div` and `p` selectors. This issue is subtle and can often be missed unless one understands how specificity calculations in CSS work in such scenarios. 
