@@ -1,0 +1,27 @@
+To resolve the unexpected color inheritance from the less specific selector, you can either add more weight to the selector for the red color or remove the less specific selector:
+
+**Solution 1: Adding specificity**
+
+Add more specificity to the `p` selector by adding a class or ID, and only apply the style to the correct paragraph element. This is often the preferred solution as it ensures you're not just overriding the specificity but providing a more contextually relevant selector.
+
+```css
+div p {
+  color: blue;
+}
+
+.my-paragraph {
+  color: red;
+}
+```
+
+**Solution 2: Removing the less specific selector**
+
+If the first rule isn't necessary or there is a less conflicting way to style the `div p`, remove the first rule entirely. This is a simpler solution, but consider if you're causing a different issue by removing it.
+
+```css
+p {
+  color: red;
+}
+```
+
+By carefully reviewing the selectors used, and choosing the most appropriate approach, we solve the unexpected styling behavior.
